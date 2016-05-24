@@ -1,13 +1,14 @@
 //Firebase Setup
 var config = {
-    apiKey: "AIzaSyBGf_GD5vTC9TZcjRDUsQBR-2yAuQv004A",
-    authDomain: "techday-elm.firebaseapp.com",
-    databaseURL: "https://techday-elm.firebaseio.com",
-    storageBucket: "",
+  apiKey: "AIzaSyBGf_GD5vTC9TZcjRDUsQBR-2yAuQv004A",
+  authDomain: "techday-elm.firebaseapp.com",
+  databaseURL: "https://techday-elm.firebaseio.com",
+  storageBucket: "",
 };
 var elmTechdayApp = firebase.initializeApp(config);
 
-// Get a reference to the database service
+
+// Get the references to the database services
 var database = firebase.database();
 var queue = database.ref('calculator/queue');
 var computed = database.ref('calculator/computed');
@@ -18,7 +19,11 @@ queue.on('child_added', function(next) {
   var result = compute(sum);
   console.log("Sum: " + JSON.stringify(sum));
   console.log("Result: " + result);
-  computed.push({sum:sum, result, result});
+  computed.push({
+    sum: sum,
+    result,
+    result
+  });
   next.ref.remove();
 });
 
@@ -27,12 +32,12 @@ function compute(sum) {
     case '+':
       return sum.left + sum.right;
     case '-':
-        return sum.left - sum.right;
+      return sum.left - sum.right;
     case 'x':
-        return sum.left * sum.right;
+      return sum.left * sum.right;
     case '/':
-        return sum.left / sum.right;
+      return sum.left / sum.right;
     default:
-        return "...";
+      return "...";
   }
 }

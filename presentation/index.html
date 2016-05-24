@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Techday Firebase</title>
+
+  <meta name="description" content="Techday Firebase">
+  <meta name="author" content="Mats Stijlaart">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+  <link rel="stylesheet" href="bower_components/avisi-reveal-js-template/avisi.css" id="theme">
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <style>
+    pre {
+      padding: 5px !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="company"></div>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <section>
+        <h1>Firebase</h1>
+
+        <h3>Getting to know your new pal</h3>
+
+        <p>
+          <small>By Mats Stijlaart / 2016-05-26</small>
+        </p>
+      </section>
+      <section>
+        <section>
+          <h2>What is it?</h2>
+        </section>
+        <section>
+          <h2>Demo</h2>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Features</h2>
+          <blockquote cite="https://firebase.google.com/features/">
+            "Firebase helps you develop high-quality apps, grow your user base, and earn more money."
+          </blockquote>
+        </section>
+        <section>
+          <h2>Features</h2>
+          <ul>
+            <li class="fragment">Realtime database</li>
+            <li class="fragment">Rules</li>
+            <li class="fragment">Authentication</li>
+            <li class="fragment">Hosting</li>
+            <li class="fragment">Storage</li>
+            <li class="fragment">Cloud Messaging</li>
+            <li class="fragment">Custumize your app on the fly</li>
+            <li class="fragment">Test lab</li>
+            <li class="fragment">Crash Reporting</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Realtime database</h2>
+        </section>
+        <section>
+          <iframe width="854" height="480" src="https://www.youtube.com/embed/U5aeM5dvUpA" frameborder="0" allowfullscreen></iframe>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Write</h3>
+        </section>
+        <section>
+          <h3>Config</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/config.jsx"></pre>
+        </section>
+        <section>
+          <h3>Set</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/simple_set.jsx"></pre>
+        </section>
+        <section>
+          <h3>Set (2)</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/user_set.jsx"></pre>
+        </section>
+        <section>
+          <h3>Update</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/update.jsx"></pre>
+        </section>
+        <section>
+          <h3>Push</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/push.jsx"></pre>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Read</h3>
+        </section>
+        <section>
+          <h3>Value</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/value.jsx"></pre>
+        </section>
+        <section>
+          <h3>List Operations</h3>
+          <ul>
+            <li class="fragment"><code>child_added</code></li>
+            <li class="fragment"><code>child_removed</code></li>
+            <li class="fragment"><code>child_changed</code></li>
+            <li class="fragment"><code>child_moved</code></li>
+          </ul>
+        </section>
+        <section>
+          <h3>on / once</h3>
+          <pre data-snippet-type="js" data-snippet="javascript/on_once.jsx"></pre>
+        </section>
+        <section>
+          <ul>
+            <li class="fragment">Transaction</li>
+            <li class="fragment">Limit to first/last n items</li>
+            <li class="fragment">Order by</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Offline</h2>
+        </section>
+        <section>
+          <h2>Database console</h2>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <img src="images/security.jpg" width="600">
+        </section>
+        <section>
+          <h3>Authentication</h3>
+          <ul>
+            <li class="fragment">Email/password</li>
+            <li class="fragment">Google</li>
+            <li class="fragment">Facebook</li>
+            <li class="fragment">Twitter</li>
+            <li class="fragment">GitHub</li>
+            <li class="fragment">OAuth</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Authentication++</h3>
+          <ul>
+            <li class="fragment">Email Templates</li>
+            <li class="fragment"><code>firebase.ui.AuthUI</code></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Rules<br><small>Demo</small></h3>
+        </section>
+        <section>
+          <h3><a target="_blank" href="https://github.com/firebase/bolt/blob/master/docs/guide.md">Bolt</a></h3>
+          <table>
+            <tr>
+              <td>
+                <pre>
+path / {
+  read() { true }
+  write() { true }
+}</pre>
+              </td>
+              <td>
+                <pre>
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}</pre>
+              </td>
+            </tr>
+          </table>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Hosting<br><small>Demo</small></h2>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+  <script src="bower_components/reveal.js/js/reveal.js"></script>
+
+  <script type="text/javascript">
+    var promises = $("pre[data-snippet]").map(function(i, y) {
+      return new Promise(function(accept, reject) {
+        var el = $(y);
+        $.ajax({
+          url: el.data('snippet'),
+          method: 'GET',
+          success: function(code) {
+            var type = el.data('snippet-type');
+            el.addClass(type).html("<code>" + code + "</code>");
+            accept();
+          },
+          error: function() {
+            debugger;
+            console.log("Error!");
+          }
+        });
+      })
+    });
+
+    Promise.all(promises).then(function() {
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        transition: 'slide',
+        dependencies: [{
+          src: 'bower_components/reveal.js/plugin/highlight/highlight.js',
+          async: false,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        }]
+      })
+    });
+  </script>
+
+</body>
+
+</html>
