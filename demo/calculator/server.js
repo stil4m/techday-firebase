@@ -21,8 +21,7 @@ queue.on('child_added', function(next) {
   console.log("Result: " + result);
   computed.push({
     sum: sum,
-    result,
-    result
+    result: result
   });
   next.ref.remove();
 });
